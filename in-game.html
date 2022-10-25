@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Google Font-family link(s) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- input & output CSS files links -->
+    <link rel="stylesheet" href="./styles/input.css" />
+    <link rel="stylesheet" href="./styles/output.css" />
+    <!-- script files links -->
+    <script src="/JS/main.js" defer></script>
+  </head>
+  <body
+    class="font-primary font-bold text-[1.8rem] text-bermudaGrey py-10 px-6 md:p-14 max-w-6xl mx-auto"
+  >
+    <header class="flex-between">
+      <h1 class="capitalize ingame-text-logo text-black">memory</h1>
+
+      <div class="flex-center gap-4">
+        <button
+          data-menu-btn
+          class="ingame-btn ingame-btn--yellow text-xl block md:hidden"
+        >
+          menu
+        </button>
+        <a
+          href="in-game.html"
+          class="ingame-btn ingame-btn--yellow text-2xl hidden md:block"
+        >
+          restart
+        </a>
+        <a
+          href="index.html"
+          class="ingame-btn hover:text-snow text-2xl hidden md:block"
+        >
+          new game
+        </a>
+      </div>
+    </header>
+
+    <!-- menu card -->
+    <div
+      data-mobile-menu
+      class="gameCard-container bg-slightlyOpaque fixed inset-0 w-full h-screen z-50"
+    >
+      <div
+        data-inner-mobile-menu
+        class="card-1 text-2xl absolute absolute-center-x z-30"
+      >
+        <a
+          href="in-game.html"
+          class="ingame-btn text-center ingame-btn--yellow full"
+          >restart</a
+        >
+        <a href="index.html" class="ingame-btn text-center ingame-btn full"
+          >new game</a
+        >
+        <button data-resume-btn class="ingame-btn ingame-btn full">
+          resume game
+        </button>
+      </div>
+    </div>
+
+    <!-- game-over card -->
+    <div
+      data-gameover-modal
+      class="gameover-backdrop bg-slightlyOpaque fixed inset-0 w-full h-screen z-50"
+    >
+      <div
+        data-gameover-inner-card
+        class="gameover-modal card-2 flex-center text-center gap-8 flex-col absolute absolute-center-x absolute-center-y z-10"
+      >
+        <div>
+          <h1
+            data-gameover-modal-title
+            class="text-tangaroa mb-4 text-4xl md:text-5xl"
+          >
+            You did it!
+          </h1>
+          <p class="text-base md:text-lg">Game over! Here's how you got on</p>
+        </div>
+
+        <main class="ingame-btnContainer flex-col full" data-game-score>
+          <div class="ingame-btnContainer__box ingame-btnContainer__box--full">
+            <h6>time elapsed</h6>
+            <span>0:00</span>
+          </div>
+
+          <div class="ingame-btnContainer__box ingame-btnContainer__box--full">
+            <h6>moves taken</h6>
+            <span data-moves-taken="8">moves</span>
+          </div>
+        </main>
+
+        <footer class="w-full flex flex-col gap-3 md:flex-row">
+          <a
+            href="in-game.html"
+            class="ingame-btn text-center ingame-btn--yellow full"
+            >restart</a
+          >
+          <a href="index.html" class="ingame-btn text-center full"
+            >setup new game</a
+          >
+        </footer>
+      </div>
+    </div>
+
+    <main class="game-grid" data-game-grid></main>
+
+    <footer class="ingame-btnContainer" data-game-footer>
+      <!-- <div class="ingame-btnContainer__box">
+        <h6>time</h6>
+        <span data-time>0:00</span>
+      </div>
+      <div class="ingame-btnContainer__box">
+        <h6>moves</h6>
+        <span>0</span>
+      </div> -->
+
+      <!-- <div class="ingame-btnContainer__box">
+        <h6>p1</h6>
+        <span>0</span>
+      </div>
+      <div class="ingame-btnContainer__box">
+        <h6>p2</h6>
+        <span>0</span>
+      </div> -->
+    </footer>
+  </body>
+</html>

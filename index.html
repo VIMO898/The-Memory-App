@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Google Font-family link(s) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- input & output CSS files links -->
+    <link rel="stylesheet" href="./styles/input.css" />
+    <link rel="stylesheet" href="./styles/output.css" />
+    <!-- script file link -->
+    <script src="/JS/main.js" defer></script>
+  </head>
+  <body
+    class="font-primary font-bold text-[1.8rem] text-bermudaGrey bg-tangaroa pb-3 md:pb-5"
+  >
+    <header>
+      <h1 class="text-center text-whiteSmoke capitalize text-h1">memory</h1>
+    </header>
+
+    <main class="card-1">
+      <div class="space-y-3">
+        <h3 class="landing-h3">select theme</h3>
+        <div class="landing-btnContainer" data-btn-container="theme">
+          <button class="flex-1 landing-btn active" value="numbers">
+            numbers
+          </button>
+          <button class="flex-1 landing-btn" value="icons">icons</button>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="landing-h3">number of players</h3>
+        <div class="landing-btnContainer" data-btn-container="players">
+          <button class="flex-1 landing-btn active" value="1">1</button>
+          <button class="flex-1 landing-btn" value="2">2</button>
+          <button class="flex-1 landing-btn" value="3">3</button>
+          <button class="flex-1 landing-btn" value="4">4</button>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="landing-h3">grid size</h3>
+        <div class="landing-btnContainer" data-btn-container="gridSize">
+          <button class="flex-1 landing-btn active" value="4x4">4x4</button>
+          <button class="flex-1 landing-btn" value="6x6">6x6</button>
+        </div>
+      </div>
+
+      <a href="in-game.html" class="landing-btn landing-btn--yellow full"
+        >start game</a
+      >
+    </main>
+  </body>
+</html>

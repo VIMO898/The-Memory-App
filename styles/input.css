@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-slightlyOpaque {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.mb-0--important {
+  margin-bottom: 0 !important;
+}
+
+.card {
+  @apply mx-auto bg-snow border-none w-full rounded-none sm:rounded-[2rem] sm:w-[95%] max-w-[40rem];
+}
+.card-1 {
+  @apply card p-6 sm:p-7 md:p-12 space-y-7;
+}
+.card-2 {
+  @apply card flex-center flex-col absolute absolute-center-x absolute-center-y bg-snow p-6 sm:p-7 md:p-12;
+}
+.absolute-center-x {
+  @apply left-1/2 -translate-x-[50%];
+}
+.absolute-center-y {
+  @apply top-1/2 -translate-y-[50%];
+}
+
+.landing-h3 {
+  @apply text-xl capitalize;
+}
+.landing-btnContainer {
+  @apply flex items-center gap-4;
+}
+.landing-btn {
+  @apply bg-spindle hover:bg-shakespeare text-snow text-2xl rounded-full p-[.6rem] capitalize transition;
+}
+.landing-btn.active {
+  @apply bg-arapawa;
+}
+.landing-btn--yellow {
+  @apply text-center bg-darkTangerine hover:bg-lightTangerine p-4;
+}
+.landing-btn.landing-btn--yellow {
+  margin-top: 2rem !important;
+}
+.full {
+  @apply block w-full;
+}
+
+.text-h1 {
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+  padding-top: clamp(4rem, 8vw, 7.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+.ingame-text-logo {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+.ingame-btn {
+  @apply px-5 py-2 text-lg md:text-xl bg-pattensBlue text-arapawa hover:bg-shakespeare capitalize rounded-full transition;
+}
+.ingame-btn.ingame-btn--yellow {
+  @apply bg-darkTangerine hover:bg-lightTangerine text-snow;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.game-grid {
+  @apply mx-auto py-16 md:py-24 box-content grid justify-center overflow-hidden w-[90vw] h-[90vw] xs:w-[80vw] xs:h-[80vw] md:max-w-xl md:max-h-[36rem];
+}
+.grid-4x4 {
+  @apply grid-cols-4 grid-rows-4 gap-3 md:gap-5;
+}
+.grid-6x6 {
+  @apply grid-cols-6 grid-rows-6 gap-2 md:gap-4;
+}
+.game-item {
+  @apply relative rounded-[50%] w-full h-full text-snow bg-darkTangerine;
+}
+.game-item::before {
+  content: "";
+  @apply w-full h-full overflow-hidden rounded-[50%] absolute inset-0 bg-arapawa z-10;
+  transition: all 230ms ease-in-out;
+}
+.game-item:hover::before {
+  @apply bg-bermudaGrey;
+}
+.game-item.open::before,
+.game-item.matched::before {
+  scale: 0;
+}
+.game-item.matched {
+  @apply bg-spindle;
+}
+
+.gameCard-container {
+  display: none;
+}
+.gameCard-container > div.card-1 {
+  bottom: -100%;
+  transition: bottom 360ms ease-out;
+}
+.gameCard-container > div.card-1.open {
+  bottom: 0;
+}
+.gameCard-container.open {
+  display: block;
+}
+
+.ingame-btnContainer {
+  @apply flex-center gap-4 md:gap-8;
+}
+.ingame-btnContainer__box {
+  @apply relative flex-between bg-pattensBlue rounded-lg py-4 px-5 max-w-xs flex-1 basis-1/4 flex-col md:flex-row;
+  transition: all 350ms ease-in-out;
+}
+.ingame-btnContainer__box.ingame-btnContainer__box--full {
+  max-width: initial;
+  flex-basis: 100%;
+  width: 100%;
+}
+.ingame-btnContainer__box.winner {
+  @apply bg-arapawa text-snow;
+}
+.ingame-btnContainer__box.winner > span {
+  @apply text-snow;
+}
+.ingame-btnContainer__box > h6 {
+  @apply capitalize text-[1.1rem] md:text-[1.21rem];
+}
+.ingame-btnContainer__box > span {
+  @apply text-arapawa text-2xl md:text-3xl;
+}
+
+.ingame-btnContainer__box.playing > span {
+  @apply text-snow;
+}
+.ingame-btnContainer__box.playing {
+  @apply bg-darkTangerine text-snow;
+}
+
+.ingame-btnContainer__box.playing::before {
+  content: "";
+  border: 1rem solid transparent;
+  @apply border-b-darkTangerine absolute -top-8 left-1/2 -translate-x-1/2;
+}
+.ingame-btnContainer__box.playing::after {
+  content: "current turn";
+  @apply hidden md:block text-tangaroa text-base uppercase absolute -bottom-9  tracking-[.35rem] w-max left-1/2 -translate-x-1/2;
+}
+
+.gameover-backdrop {
+  display: none;
+}
+.gameover-backdrop.open {
+  display: block;
+}
+
+[data-moves-taken]::before {
+  content: attr(data-moves-taken);
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+
+.grid-icon {
+  width: min(45%, 2.8rem);
+  @apply absolute absolute-center-x absolute-center-y;
+}
